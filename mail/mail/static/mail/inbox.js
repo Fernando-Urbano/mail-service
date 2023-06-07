@@ -83,6 +83,8 @@ function selected_email_view(emailId) {
           })
           email.archived = true;
           document.querySelector('#archive-button').textContent = "Unarchive";
+          load_mailbox('inbox')
+          load_mailbox('inbox')
         }
       })
       document.querySelector('#unread-button').addEventListener('click', function ()  {
@@ -125,7 +127,7 @@ function selected_email_view(emailId) {
       compose_email()
       console.log(`${userEmail} - ${email.sender}`)
       var reEmailRecipient = userEmail === email.sender ? email.recipients.join(", ") : email.sender;
-      document.querySelector('#compose-recipients').value = `${email.sender}`;
+      document.querySelector('#compose-recipients').value = reEmailRecipient;
       var reEmailSubject = email.subject.substring(0, 4) === "Re: " ? email.subject : `Re: ${email.subject}`
       document.querySelector('#compose-subject').value = reEmailSubject;
       reEmailBody = (
