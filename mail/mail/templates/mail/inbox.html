@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block body %}
-    <h2>{{ request.user.email }}</h2>
+    <h2 id="user-email">{{ request.user.email }}</h2>
 
     <button class="btn btn-sm btn-outline-primary" id="inbox">Inbox</button>
     <button class="btn btn-sm btn-outline-primary" id="compose">Compose</button>
@@ -12,6 +12,31 @@
     <hr>
 
     <div id="emails-view">
+        <h3 id="emails-view-title"></h3>
+        <div id="emails-view-body" style="white-space: pre;"></div>
+    </div>
+
+    <div id="selected-email-view">
+        <div>
+            <h3 id="selected-email-title"></h3>
+            <span id="selected-email-timestamp"></span>
+            <hr>
+            <div id="button-container">
+                <button class="btn btn-sm btn-outline-primary" id="archive-button"></button>
+                <button class="btn btn-sm btn-outline-primary" id="reply-button">Reply</button>
+                <button class="btn btn-sm btn-outline-primary" id="unread-button"></button>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            <span class="form-control" id="selected-email-sender"></span>
+        </div>
+        <div class="form-group">
+            <span class="form-control" id="selected-email-recipients"></span>
+        </div>
+        <div class="form-group">
+            <span id="selected-email-content" style="white-space: pre;"></span>
+        </div>
     </div>
 
     <div id="compose-view">
@@ -26,8 +51,13 @@
             <div class="form-group">
                 <input class="form-control" id="compose-subject" placeholder="Subject">
             </div>
-            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
-            <input type="submit" id="compose-submit" class="btn btn-primary"/>
+            <div class="form-group" style="white-space: pre;">
+                <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            </div>
+            <div id="emails-view-error-message" class="alert alert-danger"></div>
+            <div class="form-group">
+                <input type="submit" id="compose-submit" class="btn btn-primary"/>
+            </div>
         </form>
     </div>
 {% endblock %}
