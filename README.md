@@ -2,6 +2,7 @@
 This is project number 3 of the CS50 Web Development course with Django and JavaScript lectured by Harvard CS department.
 
 ## Screencast of project
+https://www.youtube.com/watch?v=bavRAFoinm4&t=18s
 
 ## Send Mail
 When a user submits the email composition form, we add JavaScript code to actually send the email. Once the email has been sent, we load the user’s sent mailbox.
