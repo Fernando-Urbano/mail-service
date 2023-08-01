@@ -1,5 +1,5 @@
 # Mail Service
-This is project number 1 of the CS50 Web Development course with Django and JavaScript lectured by Harvard CS department.
+This is project number 3 of the CS50 Web Development course with Django and JavaScript lectured by Harvard CS department.
 
 ## Screencast of project
 
